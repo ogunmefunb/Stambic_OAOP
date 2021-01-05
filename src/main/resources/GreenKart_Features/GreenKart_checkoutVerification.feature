@@ -11,6 +11,9 @@ Feature: Add To Cart
     |Orange|
     |Water Melon|
     |Pista|
+    |Beans|
+    |carrots|
+
     Then User checks-out selected products
     Then User clicks on Place order
     Then User selects Nigeria as Country

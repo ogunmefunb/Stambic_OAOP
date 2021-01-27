@@ -6,7 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="TestGreenKart" />
+        <module name="StambicOnlineAccountOpeningPortal" />
+        <module name="Stambic_OAOP" />
       </profile>
     </annotationProcessing>
   </component>

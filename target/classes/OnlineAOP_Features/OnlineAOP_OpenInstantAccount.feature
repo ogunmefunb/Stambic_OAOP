@@ -8,10 +8,11 @@ Feature: Open Instant Account
     Then User clicks on proceed button
     Then User inputs validation data as stated below:
           |BVN            |22222431493|
-          |Day Of Birth   |12|
-          |Month Of Birth |May|
-          |Year Of Birth  |1990|
+          |Day Of Birth   |01|
+          |Month Of Birth |July|
+          |Year Of Birth  |1991|
     Then User Accepts terms and conditions
     Then User clicks Submit button
+    Then User uploads  Signature and clicks continue
 
 

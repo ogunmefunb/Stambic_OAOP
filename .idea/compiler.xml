@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="StambicOnlineAccountOpeningPortal" />
         <module name="Stambic_OAOP" />
+        <module name="Stanbic_OAOP" />
       </profile>
     </annotationProcessing>
   </component>

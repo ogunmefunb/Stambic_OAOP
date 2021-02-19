@@ -1,4 +1,4 @@
-Feature: Open Instant Account
+Feature: Verify that Customer can validate BVN via online account opening portal
 
   Scenario: Verify that user can open instant account
     Given User is on https://www.stanbicibtcbank.com/
@@ -13,6 +13,6 @@ Feature: Open Instant Account
           |Year Of Birth  |1991|
     Then User Accepts terms and conditions
     Then User clicks Submit button
-    Then User uploads  Signature and clicks continue
+#    Then User uploads  Signature and clicks continue
 
 

@@ -45,8 +45,10 @@ public class Online_AOP extends Setup.lunchBrowser {
 			{
 				//Maximize Browser
 				driver.manage().window().maximize();
+
 				//Open URL
 				driver.get(url);
+
 			}
 	
 
@@ -104,6 +106,8 @@ public class Online_AOP extends Setup.lunchBrowser {
 		wait.until(ExpectedConditions.elementToBeClickable(agreetoTnC));
 		driver.findElement(agreetoTnC).click();
 		wait.until(ExpectedConditions.elementToBeClickable(acceptTnC));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(driver.findElement(acceptTnC)).perform();
 		driver.findElement(acceptTnC).click();
 
 	}
@@ -111,9 +115,6 @@ public class Online_AOP extends Setup.lunchBrowser {
 		@Then("^User clicks Submit button$")
 	public void submitForm() {
 		//Submit BVN Validation Form
-		Actions actions = new Actions(driver);
-		wait.until(ExpectedConditions.elementToBeClickable(SubmitBvnVerificationForm));
-		actions.moveToElement(driver.findElement(SubmitBvnVerificationForm)).perform();
 		driver.findElement(SubmitBvnVerificationForm).click();
 
 		}

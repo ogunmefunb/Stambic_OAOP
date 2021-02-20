@@ -30,16 +30,6 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "System displays Online account Opening Page",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "OnlineAOP_Logics.Online_AOP.Online_account_opening_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
   "name": "User chooses an account type between classic savings account",
   "keyword": "Then "
 });

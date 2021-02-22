@@ -5,7 +5,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Verify that user can open instant account",
+  "name": "Verify that user can validate BVN using valid information",
   "description": "",
   "keyword": "Scenario"
 });

@@ -3,9 +3,7 @@ package OnlineAOP_Runner;
 import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import org.testng.annotations.Test;
 
-//@Test
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		strict = true,

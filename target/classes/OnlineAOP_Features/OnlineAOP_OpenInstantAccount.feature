@@ -1,6 +1,6 @@
 Feature: Verify that Customer can validate BVN via online account opening portal
 
-  Scenario: Verify that user can open instant account
+  Scenario: Verify that user can validate BVN using valid information
     Given User is on https://www.stanbicibtcbank.com/
     Then User navigates and clicks on open an instant account icon
     Then User chooses an account type between classic savings account

@@ -3,17 +3,14 @@ package OnlineAOP_Logics;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
-import java.io.File;
 import java.time.Duration;
 import java.util.Map;
 
@@ -22,11 +19,14 @@ public class Online_AOP extends Setup.lunchBrowser {
 	WebDriver driver = getDriver();
 	
 	//Fluent Wait
-	public Wait<WebDriver> wait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(20)).pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
+	public Wait<WebDriver> wait = new FluentWait<>(driver)
+			.withTimeout(Duration.ofSeconds(20))
+			.pollingEvery(Duration.ofSeconds(2))
+			.ignoring(NoSuchElementException.class);
 
 
 	//Locator Objects
-	By openInstantAccountIcon = By.xpath("//span[text()=' Open An Instant Account']");
+	By openInstantAccountIcon = By.xpath  ("//span[text()=' Open An Instant Account']") ;
 	By SelectAccountType = By.xpath("/html/body/div[1]/div/div/div[1]/div/div/div[1]/table/tbody/tr[9]/td[1]/div/input");
 	By clickProceedButton = By.cssSelector("#disclaimer > div > div > div.pb-4 > div > button");
 	By agreetoTnC = By.xpath("//div[@class='form-group form-check']/input[@id='exampleCheck1']");
@@ -35,34 +35,23 @@ public class Online_AOP extends Setup.lunchBrowser {
 	By DayOfBirthTextBox = By.id("inputState1");
 	By monthOfBirthTextBox = By.id("inputState2");
 	By yearOfBirthTextBox = By.id("inputState3");
-	By SubmitBvnVerificationForm = By.xpath("//button[@id='ValidateBvn']");
-	By signatureUploadField = By.xpath("//*[@id=\"upload_file_sig\"]");
+	By SubmitBvnVerificationForm = By.xpath("//button[@id='ValidateBvn']") ;
 
 
 
 	@Given("^User (?:is on|navigates to|launches) (http.*)$")
-	public void NavigateTo(String url)
-			{
+	public void NavigateTo(String url)			{
 				//Maximize Browser
 				driver.manage().window().maximize();
-
 				//Open URL
-				driver.get(url);
-
-			}
+				driver.get(url);			}
 	
-
 	@Then("^User navigates and clicks on open an instant account icon$")
-	public void Open_instant_account()
-			{
+	public void Open_instant_account()			{
 				//wait for Open Instant Account button to be located
 				wait.until(ExpectedConditions.elementToBeClickable(openInstantAccountIcon));
 				// Click Open Instant Account button
-				driver.findElement(openInstantAccountIcon).click();
-			}
-			
-				
-
+				driver.findElement(openInstantAccountIcon).click();			}
 
 	@Then("^User chooses an account type between classic savings account$")
 	public void Account_type() {
@@ -70,7 +59,6 @@ public class Online_AOP extends Setup.lunchBrowser {
 		wait.until(ExpectedConditions.elementToBeClickable(SelectAccountType));
 		// Select Account Type Radio Button
 		driver.findElement(SelectAccountType).click();
-
 	}
 
 
@@ -115,18 +103,12 @@ public class Online_AOP extends Setup.lunchBrowser {
 		@Then("^User clicks Submit button$")
 	public void submitForm() {
 		//Submit BVN Validation Form
+		wait.until(ExpectedConditions.elementToBeClickable(SubmitBvnVerificationForm));
 		driver.findElement(SubmitBvnVerificationForm).click();
 
 		}
 
-		@Then("^User uploads  Signature and clicks continue$")
-		public void UploadSignature() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(signatureUploadField));
-		WebElement	fileUpload = driver.findElement(signatureUploadField);
-		String signaturePath = new File("\\src\\main\\resources\\Signature\\Signature.png").getAbsolutePath();
-//			fileUpload.sendKeys("src\\main\\resources\\uploads\\.Signature.png");
 
-		}
 
 
 }
